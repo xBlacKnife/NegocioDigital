@@ -26,7 +26,8 @@
         
         <link rel="stylesheet" href="css/flaticon.css">
         <link rel="stylesheet" href="css/icomoon.css">
-        <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/simpleCart.js"></script>
       </head>
       <body class="goto-here">
         <div class="py-1 bg-primary">
@@ -64,7 +65,7 @@
                   <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                   <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                   <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                  <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+                  <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart">[</span><span id="simpleCart_quantity" class="simpleCart_quantity"></span>]</a></li>
     
                 </ul>
               </div>
@@ -81,43 +82,54 @@
           </div>
         </div>
       </div>
-    </div>
+	</div>
+	
+	<p>
+		Cart: <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)
+		<br />
+		<a href="javascript:;" class="simpleCart_empty">empty cart</a>
+		<br />
+		</p>
 
     <section class="ftco-section">
     	<div class="container">
     		<div class="row">
 				<!-- COCHE COMPLETO-->
+				<div class="simpleCart_shelfItem">
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
     					<div class="text py-3 pb-4 px-3 text-center">
-							<h3 class="shop-item-title"><a href="#"><strong>Car</strong></br><h4>Full Car</h4></a></h3>
+							<h3 class="shop-item-title"><a href="#"><strong>Car</strong></br><h4 class="item_name">Full Car</h4></a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="price-sale shop-item-price">$2150.00</span></p>
+		    						<p class="price"><span class="item_price">$2150.00</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
 								<div class="m-auto d-flex">
-									<a href="#" onclick="addToCartClicked();" class="buy-now d-flex justify-content-center align-items-center mx-1">
+									<a class="item_add" href="javascript:;">
 										<span><i class="ion-ios-cart"></i></span>
 									</a>
 								</div>
     						</div>
     					</div>
     				</div>
-    			</div>
+				</div>
+			</div>
+
+			<div class="simpleCart_shelfItem">
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
     					<div class="text py-3 pb-4 px-3 text-center">
-							<h3><a href="#"><strong>Car</strong></br>Exterior thoroughly</br><h4>Full Exterior wash</h4></a></h3>
+							<h3 class="shop-item-title"><a href="#"><strong>Car</strong></br>Exterior thoroughly</br><h4 class="item_name">Full Exterior wash</h4></a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="price-sale">$1300.00</span></p>
+		    						<p class="price"><span class="item_price">$1300.00</span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    							<a class="item_add" href="javascript:;">
 	    								<span><i class="ion-ios-cart"></i></span>
 	    							</a>
     							</div>
@@ -125,6 +137,8 @@
     					</div>
     				</div>
 				</div>
+			</div>
+			
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
     					<div class="text py-3 pb-4 px-3 text-center">
@@ -616,5 +630,7 @@
   <script src="js/scrollax.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/store.js"></script>
+
+
   </body>
 </html>
